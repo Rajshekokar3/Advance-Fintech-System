@@ -1,0 +1,58 @@
+# Core
+pandas
+numpy
+scikit-learn
+xgboost
+joblib
+
+# NLP
+transformers
+torch
+nltk
+sentencepiece
+
+# Financial Data
+yfinance
+pandas-datareader
+
+# Web Scraping
+requests
+beautifulsoup4
+lxml
+
+# Backtesting & Portfolio Optimization
+vectorbt
+cvxpy
+pyportfolioopt
+
+# FastAPI (Backend)
+fastapi
+uvicorn[standard]
+pydantic
+
+# Streamlit (Dashboard)
+streamlit
+plotly
+
+# Scheduling / Pipelines
+apache-airflow==2.9.0
+
+# Databases
+sqlalchemy
+psycopg2-binary
+pymongo
+
+# Utils
+python-dotenv
+loguru
+
+# Cloud / Deployment
+boto3
+google-cloud-storage
+
+# Monitoring
+prometheus-client
+
+# Testing
+pytest
+pytest-cov
