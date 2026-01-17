@@ -1,5 +1,6 @@
 import os
 import time
+from matplotlib import ticker
 import requests
 import pandas as pd
 from datetime import datetime
@@ -13,7 +14,11 @@ class DataScraper:
         self.api_key = "ea54132ae726450e8b7810641a5ac4e5"  # set this once
 
     def price_scraper(self, ticker: str) -> float:
-        url = f"https://www.google.com/finance/quote/{ticker}:NSE"
+        if ticker.upper() == "BTC":
+            url = "https://www.google.com/finance/quote/BTC-USD"
+        else:
+            url = f"https://www.google.com/finance/quote/{ticker}:NSE"
+
         response = requests.get(url, headers=self.headers, timeout=5)
         response.raise_for_status()
 
@@ -60,9 +65,9 @@ class DataScraper:
 
 scraper = DataScraper()
 
-df = scraper.collect_price_and_news("Reliance")
+df = scraper.collect_price_and_news("BTC")
 
 os.makedirs("data/news", exist_ok=True)
-df.to_parquet("data/news/reliance.parquet", index=False)
+df.to_parquet(f"data/news/{ticker}.parquet", index=False)
 
 print(df.head())
