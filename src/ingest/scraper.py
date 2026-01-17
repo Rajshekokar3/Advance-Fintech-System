@@ -65,7 +65,7 @@ class DataScraper:
 
 scraper = DataScraper()
 
-df = scraper.collect_price_and_news("BTC")
+df = scraper.collect_price_and_news("RELIANCE")
 
 os.makedirs("data/news", exist_ok=True)
 df.to_parquet(f"data/news/{ticker}.parquet", index=False)
